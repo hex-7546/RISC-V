@@ -14,7 +14,7 @@ This study guide is designed to help you review the fundamental and advanced con
 <div align="center">
 <img src="Resources/what-does-a-processor-do.png">
 </div>
-Processors are integral to daily technology as the core components that execute instructions, process data, and enable computing devices to perform tasks. General-purpose processors like CPUs (Central Processing Units) handle a broad range of tasks including running operating systems, applications, and managing basic input/output functions. Specialized processors such as ISPs (Image Signal Processors), GPUs (Graphics Processing Units), and ML (Machine Learning) accelerators are designed for distinct, intensive tasks like image processing, rendering graphics, and accelerating AI computations, respectively.
+Processors are integral to daily technology as they are the core components that execute instructions, process data, and enable computing devices to perform tasks. General-purpose processors like CPUs (Central Processing Units) handle a broad range of tasks including running operating systems, applications, and managing basic input/output functions. Specialized processors such as ISPs (Image Signal Processors), GPUs (Graphics Processing Units), and ML (Machine Learning) accelerators are designed for distinct, intensive tasks like image processing, rendering graphics, and accelerating AI computations, respectively.
 <div align="center">
 <img  src="Resources/Processor_1.webp">
 </div>
