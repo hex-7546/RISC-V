@@ -19,7 +19,7 @@ Processors are integral to daily technology as they are the core components that
 <img  src="Resources/Processor_1.webp">
 </div>
 <b>A. Role of General-Purpose CPUs</b><br>
-CPUs are often called the "brain" of computers because they execute instructions sequentially for a variety of general computing needs such as browsing the internet, handling files, or running software applications. They manage data flow and system operations by fetching, decoding, executing instructions, and storing results. Their design focuses on single-threaded and latency-sensitive operations, with multiple cores enabling some <a href = 'https://search.brave.com/search?q=parallelism+meaning+in+computer+architecture&source=web&summary=1&conversation=8ff5c2596b78c07cdc87a0'>parallelism</a> for multitasking and enhancedefficiency.
+CPUs are often called the "brain" of computers because they execute instructions sequentially for a variety of general computing needs such as browsing the internet, handling files, or running software applications. They manage data flow and system operations by fetching, decoding, executing instructions, and storing results. Their design focuses on single-threaded and latency-sensitive operations, with multiple cores enabling some <a href = 'https://search.brave.com/search?q=parallelism+meaning+in+computer+architecture&source=web&summary=1&conversation=8ff5c2596b78c07cdc87a0' target ='_blank' >parallelism</a> for multitasking and enhancedefficiency.
 
 <b>B. Specialized Processors and Their Functions</b><br>
 <ul><li>ISPs (Image Signal Processors):</li> Specialized for real-time image and video processing, such as enhancing photo quality and managing camera inputs in smartphones and other devices.
