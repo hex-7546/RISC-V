@@ -8,6 +8,8 @@ This study guide is designed to help you review the fundamental and advanced con
     1.1 [Role_of_processors](#1-role-of-processors)<br>
     1.2 [Processor_functions](#2-processors-functions)<br>
     1.3 [Techology_Hierarchy](#3-techology-hierarchy)<br>
+    1.4 [Instruction_Execution_Cycyle](#4-instruction-execution-cycyle)<br>
+    1.5 [Performance_Metrices](#5-performance-metrices)<br>
 
 
 # Introduction to processors and digital systems
