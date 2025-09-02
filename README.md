@@ -15,12 +15,12 @@ This study guide is designed to help you review the fundamental and advanced con
 <div align="center">
 <img src="Resources/what-does-a-processor-do.png">
 </div>
-Processors are integral to daily technology as the core components that execute instructions, process data, and enable computing devices to perform tasks. General-purpose processors like CPUs (Central Processing Units) handle a broad range of tasks including running operating systems, applications, and managing basic input/output functions. Specialized processors such as ISPs (Image Signal Processors), GPUs (Graphics Processing Units), and ML (Machine Learning) accelerators are designed for distinct, intensive tasks like image processing, rendering graphics, and accelerating AI computations, respectively.
+Processors are integral to daily technology as they are the core components that execute instructions, process data, and enable computing devices to perform tasks. General-purpose processors like CPUs (Central Processing Units) handle a broad range of tasks including running operating systems, applications, and managing basic input/output functions. Specialized processors such as ISPs (Image Signal Processors), GPUs (Graphics Processing Units), and ML (Machine Learning) accelerators are designed for distinct, intensive tasks like image processing, rendering graphics, and accelerating AI computations, respectively.
 <div align="center">
 <img  src="Resources/Processor_1.webp">
 </div>
 <b>A. Role of General-Purpose CPUs</b><br>
-CPUs are often called the "brain" of computers because they execute instructions sequentially for a variety of general computing needs such as browsing the internet, handling files, or running software applications. They manage data flow and system operations by fetching, decoding, executing instructions, and storing results. Their design focuses on single-threaded and latency-sensitive operations, with multiple cores enabling some parallelism for multitasking and enhanced efficiency.
+CPUs are often called the "brain" of computers because they execute instructions sequentially for a variety of general computing needs such as browsing the internet, handling files, or running software applications. They manage data flow and system operations by fetching, decoding, executing instructions, and storing results. Their design focuses on single-threaded and latency-sensitive operations, with multiple cores enabling some <a href = 'https://search.brave.com/search?q=parallelism+meaning+in+computer+architecture&source=web&summary=1&conversation=8ff5c2596b78c07cdc87a0' target ='_blank' >parallelism</a> for multitasking and enhancedefficiency.
 
 <b>B. Specialized Processors and Their Functions</b><br>
 <ul><li>ISPs (Image Signal Processors):</li> Specialized for real-time image and video processing, such as enhancing photo quality and managing camera inputs in smartphones and other devices.
@@ -58,6 +58,7 @@ Arithmetic Operations:</li> The Arithmetic Logic Unit (ALU) performs calculation
 A processor cannot directly understand high-level abstract concepts such as human language or semantics. It operates on binary instructions and numerical data, so complex tasks like natural language understanding require specialized software or hardware accelerators for machine learning, which interpret and process high-level data on behalf of the CPU.
 <br><br>
 In summary, processors execute fundamental computational and control tasks essential for running software, but they do not inherently understand human languages or complex abstract data. These require additional layers of interpretation and computation beyond the processor's direct capabilities.
+
 
 ## <u>3. Techology Hierarchy  </u><br>
 
