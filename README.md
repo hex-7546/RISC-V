@@ -240,3 +240,37 @@ Execute same instructions on multiple data elements simultaneously
 
 
 # <h1 id="isa">RISC-V ISA</h1>
+## Instruction Formats (Binary Encoding)
+```Instruction Width``` - no. of bits used to represent single instruction in an ISA.
+
+RISC-V uses 32-bit fixed ```instruction-width``` for various reasons:
+1. simplicity: easier to decode and fetch
+2. performance: predictable instruction fetch
+3. alignment: instructions naturally align to 4-byte boundaries
+4. pipelining: uniform instruction size simplifies pipeline stages
+
+## R-Type Format (Register-Register Operations)
+Used when both operands come from register and the result is stored in another register
+<br>
+<img width="860" height="151" alt="image" src="https://github.com/user-attachments/assets/9e7bfd8d-6518-46ed-ad50-114e60ea515e" />
+
+**Detailed Field Analysis**
+1. ```opcode``` : 0-6 bits. Instruction family (0110011 for R-type arithmetic)
+2. ```rd```     : 7-11 bits. Destination register (00000-11111 for x0-x31)
+3. ```funct3``` : 12-14 bits. Operation type (000=ADD/SUB, 001=SLL, etc)
+4. ```rs1```    : 15-19 bits. First source register (00000-11111 for x0-x31)
+5. ```rs2```    : 20-24 bits. Second source register (00000-11111 for x0-x31)
+6. ```funct7``` : 25-31 bits. Additional operation info (0000000=ADD, 0100000=SUB)
+
+Example
+<br>
+<img width="501" height="311" alt="image" src="https://github.com/user-attachments/assets/c9c3917f-c300-4771-a23c-b59c7292b046" />
+
+## I-Type Format (Immediate Operations)
+Used when one operand is constant (immediate)
+<br>
+<img width="860" height="154" alt="image" src="https://github.com/user-attachments/assets/5f74020d-6fc7-487e-8be7-e171a9b71437" />
+
+Example
+<br>
+<img width="827" height="298" alt="image" src="https://github.com/user-attachments/assets/0bb68a9c-d98a-4455-bc8d-b897fd7064b7" />
