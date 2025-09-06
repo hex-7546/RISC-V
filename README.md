@@ -282,17 +282,45 @@ I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying 
 
 ## 1. Printing something on console
 
+Steps:
+1. Creating a ```.data``` section where variables are stored
+2. ```message:``` is a label which stores a string
+
 <img width="1592" height="630" alt="image" src="https://github.com/user-attachments/assets/d2934f5a-e14c-4a3e-8551-cfe9f307e7f6" />
 <br>
 <img width="1895" height="998" alt="image" src="https://github.com/user-attachments/assets/8283af95-7857-489c-9e03-c2899a7404d4" />
 
 ## 2. Adding two numbers in RISC-V assembly
 
+Steps:
+1. Creating a ```.data``` section where variables are stored
+2. ```a:``` and ```b:``` are labels
+3. ```.word 8``` allocates 4 bytes and stores value ```8```
+4. ```.word 7``` allocates 4 bytes and stores value ```7```
+5. ```.text``` declares the code section
+6. ```.main``` label marking the starting point of code
+
 <img width="1276" height="773" alt="image" src="https://github.com/user-attachments/assets/f3340205-5ac5-4bec-a1fc-a10f2d207fda" />
-<br>
+<br><br>
+
+Output:
+Answer is ```15 or F``` stored in ```t3```
 <img width="1894" height="977" alt="image" src="https://github.com/user-attachments/assets/737ebcc8-bbf1-42e8-9021-69ceeeea80ad" />
 
 ## 3. Creating a simple function that multiples 4 numbers together
-<img width="959" height="861" alt="image" src="https://github.com/user-attachments/assets/70464f18-fef9-41bd-a0f5-27f44d770c49" />
+
+Steps:
+1. Defines 4 arguments inside main
+2. allocate stack space first
+3. saves the return address
+4. saves the s0 and moves the stack pointer
+5. multiplies the arguements
+6. stores the result in a0
+7. restores s0, return address and deallocate stack space
 <br>
+<img width="959" height="861" alt="image" src="https://github.com/user-attachments/assets/70464f18-fef9-41bd-a0f5-27f44d770c49" />
+<br><br>
+
+Output:
+Answer is 360 written as ```168``` in hexadecimal saved at ```a0```
 <img width="1699" height="989" alt="image" src="https://github.com/user-attachments/assets/90baecdb-c4bd-47f2-9ea0-2a25e1c09635" />
