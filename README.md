@@ -9,6 +9,7 @@ This repository is designed to share the learnings regarding the fundamentals an
 5. <a href="#mem">Memory System Architecture</a>
 6. <a href="#exec">Processor Execution Models</a>
 7. <a href="#isa">RISC-V ISA</a>
+8. <a href="#exp">Experimentation with Simulator</a>
 
 
 # <h1 id="intro">Introduction to Digital World</h1>
@@ -274,3 +275,24 @@ Used when one operand is constant (immediate)
 Example
 <br>
 <img width="827" height="298" alt="image" src="https://github.com/user-attachments/assets/0bb68a9c-d98a-4455-bc8d-b897fd7064b7" />
+
+
+# <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
+I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
+
+## 1. Printing something on console
+
+<img width="1592" height="630" alt="image" src="https://github.com/user-attachments/assets/d2934f5a-e14c-4a3e-8551-cfe9f307e7f6" />
+<br>
+<img width="1895" height="998" alt="image" src="https://github.com/user-attachments/assets/8283af95-7857-489c-9e03-c2899a7404d4" />
+
+## 2. Adding two numbers in RISC-V assembly
+
+<img width="1276" height="773" alt="image" src="https://github.com/user-attachments/assets/f3340205-5ac5-4bec-a1fc-a10f2d207fda" />
+<br>
+<img width="1894" height="977" alt="image" src="https://github.com/user-attachments/assets/737ebcc8-bbf1-42e8-9021-69ceeeea80ad" />
+
+## 3. Creating a simple function that multiples 4 numbers together
+<img width="959" height="861" alt="image" src="https://github.com/user-attachments/assets/70464f18-fef9-41bd-a0f5-27f44d770c49" />
+<br>
+<img width="1699" height="989" alt="image" src="https://github.com/user-attachments/assets/90baecdb-c4bd-47f2-9ea0-2a25e1c09635" />
