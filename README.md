@@ -276,6 +276,63 @@ Example
 <br>
 <img width="827" height="298" alt="image" src="https://github.com/user-attachments/assets/0bb68a9c-d98a-4455-bc8d-b897fd7064b7" />
 
+## Load/Store Architecture
+In RISC-V only dedicated load/store instructions can access memory. This has several advantages:
+1. simpler instruction formats
+2. easier pipeline
+3. more predictable timing
+4. better compiler optimization
+
+Example 
+<br>
+<img width="197" height="88" alt="image" src="https://github.com/user-attachments/assets/9171e67c-0c1f-4879-9f04-c2f2cbc8659f" />
+
+### Memory Access Instructions
+Supposing at ```Adress 0x1000 : 0x87654321 (32-bit word)```. It is of ```4 Bytes``` where: <br>
+```Byte 0x1000 : 0x21``` <br>
+```Byte 0x1001 : 0x34``` <br>
+```Byte 0x1002 : 0x56``` <br>
+```Byte 0x1003 : 0x78``` <br>
+
+Assuming ```x1 contains 0x1000```
+
+- Load Word (32-bit) <br>
+  ```lw x2, 0(x1)  ->  x2 = 0x87654321```
+  
+- Load Halfword (16-bit) with sign extension <br>
+  ```lh x2, 0(x1)  ->  x2 = 0x4321``` <br>
+  loads bytes from 0x1000 to 0x1001 = 0x4321 <br>
+  since bit 15 = 0 i.e. 0x4321 is positive <br>
+  ```x2 = 0x00004321``` 
+  
+  ```lh x2, 2(x1)  ->  x2 = 0x8765``` <br>
+  loads bytes from 0x1002 to 0x1003 = 0x8765 <br>
+  since bit 15 = 1 i.e. 0x8765 is negative <br>
+  ```x2 = 0xFFFF8765```
+  
+- Load Halfword Unsigned (16-bit) <br>
+  ```lhu x2, 2(x1)  ->  x2 = 0x8765``` <br>
+  loads bytes from 0x1002 to 0x1003 = 0x8765 <br>
+  always zero-extended regardless of sign bit <br>
+  ```x2 = 0x00008765```
+  
+- Load Byte (8-bit) with sign extension <br>
+  ```lw x2, 0(x1)  ->  x2 = 0x21``` <br>
+  loads byte from 0x1000 = 0x21 <br>
+  since bit 7 = 0 i.e. 0x21 is positive <br>
+  ```x2 = 0x00000021```
+
+  ```lw x2, 3(x1)  ->  x2 = 0x87``` <br>
+  loads byte from 0x1003 = 0x87 <br>
+  since bit 7 = 1 i.e. 0x87 is negative <br>
+  ```x2 = 0xFFFFFF87```
+  
+- Load Word (8-bit) Unsigned <br>
+  ```lw x2, 3(x1)  ->  x2 = 0x87``` <br>
+  loads byte 0x1003 = 0x87 <br>
+  always zero-extended regardless of sign bit <br>
+  ```x2 = 0x00000087```
+
 
 # <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
 I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
