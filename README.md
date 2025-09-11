@@ -365,13 +365,13 @@ The only mode in RISC-V to calculate address is: <br>
    
 3. **Stack Access**
    <br>
-   Local variables at negative offsets from frame pointer
+   Local variables at negative offsets from frame pointer <br>
    ```lw x15, -8(s0)``` - loads local variable at fp-8 <br>
    ```sw x16, -12(s0)``` - store to local variable at fp-12
    
 4. **Global Variable Access** using global pointer
    <br>
-   ```lw x17, 100(gp)``` - load global variable at gp+100
+   ```lw x17, 100(gp)``` - load global variable at gp+100 <br>
    ```sw x17, 200(gp)``` - store global variable at gp+200
 
    
