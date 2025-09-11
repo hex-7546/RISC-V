@@ -339,21 +339,21 @@ The only mode in RISC-V to calculate address is: <br>
 
 ```Address  =  register_value + sign_extended_immediate```
 
-1. **Array Access**
+1. **Array Access** <br>
 
-  Suppose an example
-  <br>
-  <img width="570" height="79" alt="image" src="https://github.com/user-attachments/assets/ea67d131-985c-423e-9818-4313554b8bd9" />
-  <br>
-  CASE 1: When index cannot be fit inside 12-bit offset <br>
-  ```slli x12, x11, 2``` - x12 = index * 4 (shift left 2 means multiply by 4) <br>
-  ```add x12, x10, x12``` - x12 = base + (index * 4) <br>
-  ```lw x13, 0(x12)``` <br>
+   Suppose an example
+   <br>
+   <img width="570" height="79" alt="image" src="https://github.com/user-attachments/assets/ea67d131-985c-423e-9818-4313554b8bd9" />
+   <br>
+   CASE 1: When index cannot be fit inside 12-bit offset <br>
+   ```slli x12, x11, 2``` - x12 = index * 4 (shift left 2 means multiply by 4) <br>
+   ```add x12, x10, x12``` - x12 = base + (index * 4) <br>
+   ```lw x13, 0(x12)``` <br>
   
-  CASE 2: When index can be fit inside 12-bit offset <br>
-  ```lw x13, 20(x10)``` - loads array[5] directly (20 = 5 * 4) <br>
+   CASE 2: When index can be fit inside 12-bit offset <br>
+   ```lw x13, 20(x10)``` - loads array[5] directly (20 = 5 * 4) <br>
 
-2. **Structure Member Access**
+2. **Structure Member Access** <br>
   
    Suppose an example
    <br>
@@ -364,11 +364,13 @@ The only mode in RISC-V to calculate address is: <br>
    ```lw x14, 4(x10)``` <br>
    
 3. **Stack Access**
+   <br>
    Local variables at negative offsets from frame pointer
    ```lw x15, -8(s0)``` - loads local variable at fp-8 <br>
    ```sw x16, -12(s0)``` - store to local variable at fp-12
    
 4. **Global Variable Access** using global pointer
+   <br>
    ```lw x17, 100(gp)``` - load global variable at gp+100
    ```sw x17, 200(gp)``` - store global variable at gp+200
 
