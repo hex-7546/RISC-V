@@ -9,6 +9,8 @@ This repository is designed to share the learnings regarding the fundamentals an
 5. <a href="#mem">Memory System Architecture</a>
 6. <a href="#exec">Processor Execution Models</a>
 7. <a href="#isa">RISC-V ISA</a>
+8. <a href="#cond">Control Flow and Program Structure</a>
+9. <a href="#ext">Advanced RISC_V Features and Extensions</a>
 8. <a href="#exp">Experimentation with Simulator</a>
 
 
@@ -374,7 +376,7 @@ The only mode in RISC-V to calculate address is: <br>
    ```lw x17, 100(gp)``` - load global variable at gp+100 <br>
    ```sw x17, 200(gp)``` - store global variable at gp+200
 
-# Control Flow and Program Structure
+# <h1 id="cond">Control Flow and Program Structure</h1>
 
 ## Conditional Branches
 ### Branch Instruction Format (B-type)
@@ -407,6 +409,50 @@ Branch Instruction is used when we have to jump to another location if a conditi
 3. ```BNEZ``` - branch if not equal to zero
 
 <a href="#if_example">See Example</a>
+
+## Loop Implementation
+### For Loop
+
+for (i = 0; i < n; i++) <br>
+x1 = i <br>
+x2 = n <br>
+
+    li   x1, 0         # initialize i = 0
+    # assume x2 contains n already (loop limit)
+
+loop_start:             # <--- loop label <br>
+      
+    bge  x1, x2, loop_end # if i >= n, exit loop
+    
+    # ---- Loop body ----
+    # process array[i] or do work here
+    # -------------------
+
+    addi x1, x1, 1     # i++
+    j    loop_start    # go back to start of loop
+
+loop_end: <br>
+    # loop finished
+
+**Notes**
+```loop_start``` - this is a label. CPU doesn't execute it. It just marks the memory the address in memory so instructions inside it know where to go
+```j``` - unconditional jump. Always goes back to the instruction at ```loop_start```. This creates the repetition
+
+### Countdown Loop
+Instead of counting up (usual looping), countdown loop starts from i = n and ends at i = 0. It is more efficient compared to countup loop as equating to zero is more easier than any other number
+<br>
+<img width="680" height="317" alt="image" src="https://github.com/user-attachments/assets/e3bdbe82-563b-45d7-a087-7ed179e1247c" />
+<br>
+
+### While Loop
+
+<img width="723" height="323" alt="image" src="https://github.com/user-attachments/assets/dab50c94-b7f1-4854-9ef9-d373b88c13d9" />
+
+### Do-While Loop
+
+<img width="707" height="292" alt="image" src="https://github.com/user-attachments/assets/44aa73ca-b98d-4456-82ac-aae9afe8f970" />
+
+# <h1 id="ext">Advanced RISC_V Features and Extensions</h1>
 
 # <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
 I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
