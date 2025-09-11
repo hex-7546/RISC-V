@@ -374,7 +374,39 @@ The only mode in RISC-V to calculate address is: <br>
    ```lw x17, 100(gp)``` - load global variable at gp+100 <br>
    ```sw x17, 200(gp)``` - store global variable at gp+200
 
-   
+# Control Flow and Program Structure
+
+## Conditional Branches
+### Branch Instruction Format (B-type)
+Branch Instruction is used when we have to jump to another location if a condition is true
+<br>
+<img width="860" height="155" alt="image" src="https://github.com/user-attachments/assets/6862be16-0cae-401d-8284-62a11c81b19e" />
+
+
+**Note**
+1. ```imm[11]``` : jump offset bit
+2. ```imm[4:1]``` : next 4-bit of jump offset
+3. ```imm[10:5]``` : next 6-bit of jump offset
+4. ```imm[12:11]``` : part of jump offset (sign bit)
+
+### Branch Condition and Implementation
+<img width="965" height="235" alt="image" src="https://github.com/user-attachments/assets/f18ecdda-170c-4ef7-8a78-017ab74f0941" />
+
+**Instructions** <br>
+1. ```BEQ``` - branch if equal. checks equality of two registers by subtracting them and equating them to 0 <br>
+2. ```BNE``` - branch if not equal. checks non equality of two registers by subtracting them and ensuring result is not 0 <br>
+3. ```BLT``` - branch if less than (signed). checks if one register is less than other by subtracting them and branches if sign bit is set or 1 <br>
+4. ```BGE``` - branch if greater or equal (signed). checks if one register is greater than other by subtracting them if sign bit is clear or 0 <br>
+5. ```BLTU``` - branch if less than unsigned. checks if one register is less than other by subtracting them and if carry over takes place <br>
+6. ```BGEU``` - branch if greater or equal unsigned. checks if one register is greater than other by subtracting them and no carry over is generated <br>
+<br>
+**Other Instructions**
+1. ```BLE``` - branch if less than or equal
+2. ```BEQZ``` - branch if equal to zero
+3. ```BNEZ``` - branch if not equal to zero
+
+<a href="#if_example">See Example</a>
+
 # <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
 I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
 
