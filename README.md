@@ -333,7 +333,46 @@ Assuming ```x1 contains 0x1000```
   always zero-extended regardless of sign bit <br>
   ```x2 = 0x00000087```
 
+### Address Calculation Modes
+The only mode in RISC-V to calculate address is: <br>
+```Base + Offset addressing```
 
+```Address  =  register_value + sign_extended_immediate```
+
+1. **Array Access**
+
+  Suppose an example
+  <br>
+  <img width="570" height="79" alt="image" src="https://github.com/user-attachments/assets/ea67d131-985c-423e-9818-4313554b8bd9" />
+  <br>
+  CASE 1: When index cannot be fit inside 12-bit offset <br>
+  ```slli x12, x11, 2``` - x12 = index * 4 (shift left 2 means multiply by 4) <br>
+  ```add x12, x10, x12``` - x12 = base + (index * 4) <br>
+  ```lw x13, 0(x12)``` <br>
+  
+  CASE 2: When index can be fit inside 12-bit offset <br>
+  ```lw x13, 20(x10)``` - loads array[5] directly (20 = 5 * 4) <br>
+
+2. **Structure Member Access**
+  
+   Suppose an example
+   <br>
+   <img width="544" height="46" alt="image" src="https://github.com/user-attachments/assets/1cc87019-abed-42cc-92fa-18f4122401a5" />
+   <br>
+   ```Note : int x, int y, int z are all of 4 bytes hence offset is 4``` <br>
+
+   ```lw x14, 4(x10)``` <br>
+   
+3. **Stack Access**
+   Local variables at negative offsets from frame pointer
+   ```lw x15, -8(s0)``` - loads local variable at fp-8 <br>
+   ```sw x16, -12(s0)``` - store to local variable at fp-12
+   
+4. **Global Variable Access** using global pointer
+   ```lw x17, 100(gp)``` - load global variable at gp+100
+   ```sw x17, 200(gp)``` - store global variable at gp+200
+
+   
 # <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
 I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
 
