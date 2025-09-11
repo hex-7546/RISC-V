@@ -453,6 +453,34 @@ Instead of counting up (usual looping), countdown loop starts from i = n and end
 <img width="707" height="292" alt="image" src="https://github.com/user-attachments/assets/44aa73ca-b98d-4456-82ac-aae9afe8f970" />
 
 # <h1 id="ext">Advanced RISC_V Features and Extensions</h1>
+RISC-V uses a modular approach where the base instruction set (RV32I or RV64I) is extended with additional instruction sets for specific needs
+
+### Standard Extensions
+RISC-V has many instructions for meeting various purposes
+| Extension | Description                         | Purpose and Insructions                                        |
+|-----------|-------------------------------------|----------------------------------------------------------------|
+| A         | Atomic instructions                 | Atomic memory operations for multithreading
+| B         | Bit manipulation                    |
+| C         | Compressed instructions             |
+| D         | Double-precision floating-point     |
+| F         | Single-precision floating-point     |
+| *G*       | *Shorthand for IMAFD extensions*    |
+| H         | Hypervisor extension                |
+| I         | Integer                             | Basic integer instruction set (required)
+| L         | Decimal floating-point              |
+| M         | Integer multiplication and division |
+| P         | Packed-SIMD instructions            |
+| Q         | Quad-precision floating-point       |
+| V         | Vector operations                   |
+
+**Examples**
+
+| Name      | Description                                                              |
+|-----------|--------------------------------------------------------------------------|
+| RV32I     | Supports only basic operations natively on 32 bits                       |
+| RV32GC    | General purpose uses on 32 bits with support for compressed instructions |
+| RV64IMACV | For intensive and parallel integer-only computing                        |
+| RV64GCV   | Theoretically suitable for future personal computers                     |
 
 # <h1 id="exp">Experimentation/Tinkering with Simulator</h1>
 I'm using the <a href="https://venus.cs61c.org/">Venus Simulator</a> for trying out simple programs to grasp more about RISC-V Assembly
