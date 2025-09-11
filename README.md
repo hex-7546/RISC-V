@@ -400,6 +400,7 @@ Branch Instruction is used when we have to jump to another location if a conditi
 5. ```BLTU``` - branch if less than unsigned. checks if one register is less than other by subtracting them and if carry over takes place <br>
 6. ```BGEU``` - branch if greater or equal unsigned. checks if one register is greater than other by subtracting them and no carry over is generated <br>
 <br>
+
 **Other Instructions**
 1. ```BLE``` - branch if less than or equal
 2. ```BEQZ``` - branch if equal to zero
