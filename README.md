@@ -460,18 +460,16 @@ RISC-V has many instructions for meeting various purposes
 | Extension | Description                         | Purpose and Insructions                                        |
 |-----------|-------------------------------------|----------------------------------------------------------------|
 | A         | Atomic instructions                 | Atomic memory operations for multithreading
-| B         | Bit manipulation                    |
-| C         | Compressed instructions             |
-| D         | Double-precision floating-point     |
-| F         | Single-precision floating-point     |
-| *G*       | *Shorthand for IMAFD extensions*    |
-| H         | Hypervisor extension                |
+| C         | Compressed instructions             | Shorter 16-bit instructions to save memory
+| D         | Double-precision floating-point     | 64-bit floating math
+| F         | Single-precision floating-point     | 32-bit floating math
+| *G*       | *Shorthand for IMAFD extensions*    | Short for the combo of IMAFD
+| H         | Hypervisor extension                | For visual support
 | I         | Integer                             | Basic integer instruction set (required)
-| L         | Decimal floating-point              |
-| M         | Integer multiplication and division |
-| P         | Packed-SIMD instructions            |
-| Q         | Quad-precision floating-point       |
-| V         | Vector operations                   |
+| M         | Integer multiplication and division | Hardware multiplication and division
+| P         | Packed-SIMD instructions            | Multimedia and DSP tasks
+| Q         | Quad-precision floating-point       | 128-bit floating math
+| V         | Vector operations                   | SIMD operations for AI & HFC
 
 **Examples**
 
