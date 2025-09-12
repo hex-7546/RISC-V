@@ -471,6 +471,10 @@ RISC-V has many instructions for meeting various purposes
 | Q         | Quad-precision floating-point       | 128-bit floating math
 | V         | Vector operations                   | SIMD operations for AI & HFC
 
+Notes:
+```SIMD``` - Single instructions, multiple data
+```HFC``` - High Performance Computing
+
 **Examples**
 
 | Name      | Description                                                              |
