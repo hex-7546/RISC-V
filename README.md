@@ -531,3 +531,18 @@ Steps:
 Output:
 Answer is 360 written as ```168``` in hexadecimal saved at ```a0```
 <img width="1699" height="989" alt="image" src="https://github.com/user-attachments/assets/90baecdb-c4bd-47f2-9ea0-2a25e1c09635" />
+
+## 4. Creating a simple control flow program
+
+Steps:
+1. Defines two variables in the ```.data``` section
+2. Loads their address first and then load the values of the variable in ```a0``` and ```a1```
+3. The program is that if ```a >= 10``` and ```b <= 20``` then ```result = a + b```, if both are false ```result = b*2```, else ```result = a - b```.
+
+<br>
+<img width="919" height="997" alt="image" src="https://github.com/user-attachments/assets/4fa2a6f7-4d22-4abc-8919-91b163669d8a" />
+<br><br>
+
+Output:
+Since both the values satisfies the condition the result is a + b or 12 + 16 = 28
+<img width="1853" height="821" alt="image" src="https://github.com/user-attachments/assets/566e14ef-c9c6-4097-b319-ea3f56a10d75" />
